@@ -13,12 +13,16 @@ public class Student {
 	@Id
 	@Column(name = "adm_no")
 	private int addmissionNo;
+	
 	@Column(name = "roll_no")
 	private int rollNo;
+	
 	@Column(name="fname")
 	private String fname;
+	
 	@Column(name="lname")
 	private String lname;
+	
 	@Column(name="contact_no")
 	private String contactNo;
 	

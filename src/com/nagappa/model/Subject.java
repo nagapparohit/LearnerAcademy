@@ -1,18 +1,39 @@
 package com.nagappa.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "subject")
 public class Subject {
 
+	@Id
+	private int id;
+	
+	@Column(name = "code")
 	private int code;
+	@Column(name="name")
 	private String name;
 	
 	public Subject() {
 		super();
 		
 	}
-	public Subject(int code, String name) {
+	public Subject(int code, String name,int id) {
 		super();
 		this.code = code;
 		this.name = name;
+		this.id= id;
+	}
+	
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	public int getCode() {
 		return code;

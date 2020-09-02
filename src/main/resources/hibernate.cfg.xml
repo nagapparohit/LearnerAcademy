@@ -7,14 +7,14 @@
 
 	<session-factory>
 		<property name="connection.driver_class">org.postgresql.Driver</property>
-		<property name="connection.url">jdbc:postgresql://localhost:5432/ecommerce</property>
+		<property name="connection.url">jdbc:postgresql://localhost:5432/testdb</property>
 		<property name="connection.username">postgres</property>
 		<property name="connection.password">postgres</property>
 
 		<property name="connection.pool_size">1</property>
 		<property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
 		
-		<property name="hbm2ddl.auto">validate</property>
+		<property name="hbm2ddl.auto">update</property>
 		<!-- each session run in separate thread -->
 		<property name="current_session_context_class">thread</property>
 		
@@ -24,6 +24,8 @@
 		<mapping class="com.nagappa.Student" />
 		<mapping class="com.nagappa.Subject" />
 		<mapping class="com.nagappa.Teacher" />
+		<mapping class="com.nagappa.UserEntity"/>
+		
 		
 	</session-factory>
 </hibernate-configuration>

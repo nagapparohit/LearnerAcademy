@@ -1,17 +1,17 @@
 package com.nagappa.model;
 
-import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "standard")
-public class Standard {
+@Table(name = "class_entity")
+public class ClassEntity {
 	
 	@Id
 	private int id;
@@ -21,20 +21,24 @@ public class Standard {
 	@Column(name = "section")
 	private char section;
 	
-	@OneToMany
-	Collection<Student> students = new ArrayList<>();
+	@ManyToMany
+	private Collection<TeacherEntity> teachers;
 	
-	public Standard() {
+	@ManyToMany
+	private Collection<SubjectEntity> subjects;
+	
+	@OneToMany
+	private Collection<StudentEntity> students;
+	public ClassEntity() {
 		super();
 	}
-	public Standard(int value, char section,Collection<Student> student,int id) {
+	
+	public ClassEntity(int value, char section,int id) {
 		super();
 		this.value = value;
 		this.section = section;
-		this.students = student;
 		this.id = id;
 	}
-	
 	
 	public int getId() {
 		return id;
@@ -42,12 +46,7 @@ public class Standard {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public Collection<Student> getStudents() {
-		return students;
-	}
-	public void setStudents(Collection<Student> students) {
-		this.students = students;
-	}
+	
 	public int getValue() {
 		return value;
 	}
@@ -60,10 +59,10 @@ public class Standard {
 	public void setSection(char section) {
 		this.section = section;
 	}
-	@Override
-	public String toString() {
-		return "Standard [value=" + value + ", section=" + section + "]";
-	}
+	
+	
+	
+	
 	
 	
 	

@@ -1,18 +1,13 @@
 package com.nagappa.model;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "teacher")
-public class Teacher {
+public class TeacherEntity {
 
 	@Id
 	private int id;
@@ -21,24 +16,16 @@ public class Teacher {
 	@Column(name = "contact_no")
 	private String contactNo;
 	
-	@OneToMany
-	private Collection<Subject> subjects = new ArrayList<>();
 	
-	@OneToOne
-	private Standard std;
-	
-	
-	public Teacher() {
+	public TeacherEntity() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Teacher(String name, String contactNo,Collection<Subject> subjects,int id,Standard std) {
+	public TeacherEntity(String name, String contactNo,int id) {
 		super();
 		this.name = name;
 		this.contactNo = contactNo;
-		this.subjects = subjects;
 		this.id = id;
-		this.std = std;
 	}
 	
 	
@@ -49,18 +36,8 @@ public class Teacher {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public Standard getStd() {
-		return std;
-	}
-	public void setStd(Standard std) {
-		this.std = std;
-	}
-	public Collection<Subject> getSubjects() {
-		return subjects;
-	}
-	public void setSubjects(Collection<Subject> subjects) {
-		this.subjects = subjects;
-	}
+	
+	
 	public String getName() {
 		return name;
 	}

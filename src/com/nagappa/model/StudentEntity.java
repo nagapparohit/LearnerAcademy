@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "student")
-public class Student {
+public class StudentEntity {
 
 	@Id
 	@Column(name = "adm_no")
@@ -29,14 +29,11 @@ public class Student {
 	@Column(name="address")
 	private String address;
 	
-	@OneToOne
-	private Standard std;
-	
-	public Student() {
+	public StudentEntity() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Student(int addmissionNo, int rollNo, String fname, String lname, String contactNo, String address,Standard std) {
+	public StudentEntity(int addmissionNo, int rollNo, String fname, String lname, String contactNo, String address) {
 		super();
 		this.addmissionNo = addmissionNo;
 		this.rollNo = rollNo;
@@ -44,14 +41,8 @@ public class Student {
 		this.lname = lname;
 		this.contactNo = contactNo;
 		this.address = address;
-		this.std = std;
 	}
-	public Standard getStd() {
-		return std;
-	}
-	public void setStd(Standard std) {
-		this.std = std;
-	}
+
 	public int getRollNo() {
 		return rollNo;
 	}

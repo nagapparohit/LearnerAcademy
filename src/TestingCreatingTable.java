@@ -15,8 +15,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
-
-import com.nagappa.dao.HibernateUtil;
+import org.hibernate.exception.SQLGrammarException;
 
 @WebServlet("/TestingCreatingTable")
 public class TestingCreatingTable extends HttpServlet {
@@ -26,10 +25,11 @@ public class TestingCreatingTable extends HttpServlet {
         super();
         try {
 			Configuration configuration  = new Configuration().configure();
-			configuration.addAnnotatedClass(com.nagappa.model.Standard.class);
-			configuration.addAnnotatedClass(com.nagappa.model.Student.class);
-			configuration.addAnnotatedClass(com.nagappa.model.Subject.class);
-			configuration.addAnnotatedClass(com.nagappa.model.Teacher.class);
+			configuration.addAnnotatedClass(com.nagappa.model.ClassEntity.class);
+			configuration.addAnnotatedClass(com.nagappa.model.StudentEntity.class);
+			configuration.addAnnotatedClass(com.nagappa.model.SubjectEntity.class);
+			configuration.addAnnotatedClass(com.nagappa.model.TeacherEntity.class);
+			configuration.addAnnotatedClass(com.nagappa.model.UserEntity.class);
 			
 			StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
 			
@@ -40,7 +40,12 @@ public class TestingCreatingTable extends HttpServlet {
 			
 			txn.commit();
 			session.close();
-		} catch (HibernateException e) {
+			
+		}catch(SQLGrammarException ex) {
+			ex.printStackTrace();
+			System.out.println("Above in SQL Grammar Exception");
+		}
+        catch (HibernateException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

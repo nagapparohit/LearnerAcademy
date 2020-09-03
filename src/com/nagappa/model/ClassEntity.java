@@ -22,17 +22,17 @@ public class ClassEntity {
 	@Column(name = "section")
 	private char section;
 	
-	@ManyToMany
-	private Collection<TeacherEntity> teachers;
+	//@ManyToMany
+	//private Collection<TeacherEntity> teachers;
 	
-	@ManyToMany
-	private Collection<SubjectEntity> subjects;
+	//@ManyToMany
+	//private Collection<SubjectEntity> subjects;
 	
 	@OneToMany
 	private Collection<StudentEntity> students;
 	
-	@OneToMany
-	private Collection<Map<SubjectEntity,TeacherEntity>> subTeacher;
+	@ManyToMany
+	private Map<SubjectEntity,TeacherEntity> subTeacher;
 	
 	public ClassEntity() {
 		super();

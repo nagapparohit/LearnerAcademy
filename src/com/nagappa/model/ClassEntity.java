@@ -1,6 +1,7 @@
 package com.nagappa.model;
 
 import java.util.Collection;
+import java.util.Map;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -29,6 +30,10 @@ public class ClassEntity {
 	
 	@OneToMany
 	private Collection<StudentEntity> students;
+	
+	@OneToMany
+	private Collection<Map<SubjectEntity,TeacherEntity>> subTeacher;
+	
 	public ClassEntity() {
 		super();
 	}

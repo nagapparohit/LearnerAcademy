@@ -1,11 +1,8 @@
 package com.nagappa.model;
 
-import java.util.Collection;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -20,8 +17,8 @@ public class SubjectEntity {
 	@Column(name="name")
 	private String name;
 	
-	@ManyToMany
-	private Collection<TeacherEntity> teacher;
+	//@ManyToMany
+	//private Collection<TeacherEntity> teacher;
 	
 	public SubjectEntity() {
 		super();

@@ -20,11 +20,11 @@
 		
 		<property name="show_sql">true</property>
 		
-		<mapping class="com.nagappa.Standard" />
-		<mapping class="com.nagappa.Student" />
-		<mapping class="com.nagappa.Subject" />
-		<mapping class="com.nagappa.Teacher" />
-		<mapping class="com.nagappa.UserEntity"/>
+		<mapping class="com.nagappa.model.ClassEntity" />
+		<mapping class="com.nagappa.model.StudentEntity" />
+		<mapping class="com.nagappa.model.SubjectEntity" />
+		<mapping class="com.nagappa.model.TeacherEntity" />
+		<mapping class="com.nagappa.model.UserEntity"/>
 		
 		
 	</session-factory>

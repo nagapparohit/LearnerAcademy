@@ -6,3 +6,12 @@
     margin-left: 40%;
     margin-top: 3%;
 }
+
+.signup_form{
+    background-color: blue;
+    border: 3px solid;
+    display: inline-block;
+    text-align: center;
+    margin-left: 40%;
+    margin-top: 3%;
+}

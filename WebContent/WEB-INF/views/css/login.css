@@ -15,3 +15,51 @@
     margin-left: 40%;
     margin-top: 3%;
 }
+
+.forgetPassword_form{
+    background-color: blue;
+    border: 3px solid;
+    display: inline-block;
+    text-align: center;
+    margin-left: 40%;
+    margin-top: 3%;
+}
+
+.studentModule{
+    background-color: blue;
+    border: 3px solid;
+    display: inline-block;
+    text-align: center;
+    margin-left: 40%;
+    margin-top: 3%;
+}
+
+.classModule{
+    background-color: blue;
+    border: 3px solid;
+    display: inline-block;
+    text-align: center;
+    margin-left: 40%;
+    margin-top: 3%;
+}
+
+.subjectModule{
+    background-color: blue;
+    border: 3px solid;
+    display: inline-block;
+    text-align: center;
+    margin-left: 40%;
+    margin-top: 3%;
+}
+
+.teacherModule{
+    background-color: blue;
+    border: 3px solid;
+    display: inline-block;
+    text-align: center;
+    margin-left: 40%;
+    margin-top: 3%;
+}
+
+.modulesTable{
+}

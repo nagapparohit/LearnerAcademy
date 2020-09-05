@@ -28,6 +28,10 @@ public class SignupController {
 	public String register(@RequestParam("username")String username,@RequestParam("password")String password,ModelMap map) {
 		
 		String view="signup";
+		if(username.isEmpty() || password.isEmpty()) {
+			map.addAttribute("alreadyExists", "Username and password are mandatory fields");
+			return view;
+		}
 		Transaction txn = null;
 		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 		Session session = sessionFactory.openSession();

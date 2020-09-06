@@ -9,6 +9,7 @@ import org.hibernate.query.Query;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.nagappa.dao.HibernateUtil;
 import com.nagappa.model.StudentEntity;
@@ -29,7 +30,9 @@ public class StudentModuleController {
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@RequestMapping(value = "saveStudent")
-	public String saveStudent(String admNo,String address,String contactNo,String fname,String lname,String rollNo,ModelMap map) {
+	public String saveStudent(@RequestParam("admNo")String admNo,@RequestParam("address")String address,
+			@RequestParam("contactNo")String contactNo,@RequestParam("fname")String fname,@RequestParam("lname")String lname,
+			@RequestParam("rollNo")String rollNo,ModelMap map) {
 		String view="addStudent";
 		if(admNo.isEmpty() || address.isEmpty() || contactNo.isEmpty()|| fname.isEmpty()| lname.isEmpty()||rollNo.isEmpty()) {
 			map.addAttribute("error","all fields are manadtory.");
@@ -42,7 +45,7 @@ public class StudentModuleController {
 		Session session = factory.openSession();
 		txn = session.beginTransaction();
 
-		String queryString = "from StudentEnity s where s.admissionNo = :admNo";
+		String queryString = "from StudentEntity s where s.addmissionNo = :admNo";
 		Query query=session.createQuery(queryString);
 		List<UserEntity> resultDB = query.setParameter("admNo",admNo).getResultList();
 		txn.commit();

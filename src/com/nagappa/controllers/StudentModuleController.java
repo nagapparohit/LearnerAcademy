@@ -47,7 +47,7 @@ public class StudentModuleController {
 
 		String queryString = "from StudentEntity s where s.addmissionNo = :admNo";
 		Query query=session.createQuery(queryString);
-		List<UserEntity> resultDB = query.setParameter("admNo",admNo).getResultList();
+		List<UserEntity> resultDB = query.setParameter("admNo",admissionNo).getResultList();
 		txn.commit();
 		
 		if(resultDB.isEmpty()) {

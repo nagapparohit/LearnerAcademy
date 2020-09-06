@@ -79,6 +79,12 @@ public class StudentEntity {
 	public void setAddmissionNo(int addmissionNo) {
 		this.addmissionNo = addmissionNo;
 	}
+	@Override
+	public String toString() {
+		return "StudentEntity [addmissionNo=" + addmissionNo + ", rollNo=" + rollNo + ", fname=" + fname + ", lname="
+				+ lname + ", contactNo=" + contactNo + ", address=" + address + "]";
+	}
+	
 	
 	
 }

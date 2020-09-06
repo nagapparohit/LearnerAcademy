@@ -11,7 +11,7 @@
 <body>
 
 	<div class="login_form">
-		<form action="getStudent" method="post">
+		<form action="saveStudent" method="post">
 			<input type="text" name="admNo" placeholder="Enter Admission No"><br><br>
 			<input type="text" name="address" placeholder="Enter Address No"><br><br>
 			<input type="text" name="contactNo" placeholder="Enter Mobile No"><br><br>

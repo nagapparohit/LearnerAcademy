@@ -62,7 +62,7 @@ public class StudentModuleController {
 	
 	@RequestMapping(value ="addStudent")
 	public String addStudent() {
-		return "studentModule";
+		return "addStudent";
 		
 	}
 	

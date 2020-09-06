@@ -31,12 +31,31 @@ public class StudentModuleController {
 	@RequestMapping(value="getStudent")
 	public String getStudent(@RequestParam("admNo")String admissionNo,ModelMap map) {
 		String view="checkStudent";
-		int admNo = Integer.parseInt(admissionNo);
-		
+
 		if(admissionNo.isEmpty()) {
 			map.addAttribute("error","admission number is mandatory");
 			return view;
 		}
+		
+		int admNo = Integer.parseInt(admissionNo);
+		Transaction txn = null;
+		SessionFactory factory = HibernateUtil.getSessionFactory();
+		Session session = factory.openSession();
+		txn = session.beginTransaction();
+		
+		String queryString = "from StudentEntity s where s.addmissionNo = :admNo";
+		Query query=session.createQuery(queryString);
+		List<StudentEntity> resultDB = query.setParameter("admNo",admNo).getResultList();
+		txn.commit();
+		
+		if(!resultDB.isEmpty()) {
+			for(StudentEntity s:resultDB) {
+				map.addAttribute("error", s.toString());
+			}
+		}else {
+			map.addAttribute("error", "No student exists with "+admissionNo);
+		}
+		
 		return view;
 	}
 	

@@ -29,7 +29,11 @@ public class AuthController {
 	@RequestMapping(value="login", method=RequestMethod.POST)
 	public String isValidUser(@RequestParam("username")String username,@RequestParam("password")String password,ModelMap map) {
 		String view="login";
-
+		
+		if(username.isEmpty() || password.isEmpty()) {
+			map.addAttribute("invalidCredentials","both username and password fields are manadtory");
+			return view;
+		}
 		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 
 		Session session = sessionFactory.openSession();

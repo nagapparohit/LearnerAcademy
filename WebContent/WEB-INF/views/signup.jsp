@@ -13,8 +13,10 @@
 		<form action="register" method="post">
 			<input type="text" name="username" placeholder="Create Username"><br><br> 
 			<input type="password" name="password" placeholder="Create password"><br><br> 
-			<input type="submit" value="submit"> 
+			<input type="submit" value="submit"> <br><br>
+			<a href="/LearnerAcademy-0.0.1-SNAPSHOT/"><button type="button" name="home">Home</button></a>
 		</form>
+		
 		<span>${alreadyExists}</span>
 	</div>
 

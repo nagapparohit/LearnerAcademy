@@ -15,8 +15,9 @@
 			<input type="text" name="username" placeholder="type Username"><br><br>
 			<input type="password" name="password" placeholder="type new password"><br><br>
 			<input type="submit" value="submit">
+			<a href="/LearnerAcademy-0.0.1-SNAPSHOT/"><button type="button" name="home">Home</button></a>
 		</form>
-    <a href="/LearnerAcademy-0.0.1-SNAPSHOT/">Home</a>
+    
 		<span>${usernotexist}</span>
 	</div>
 </body>

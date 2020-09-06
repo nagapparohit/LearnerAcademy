@@ -11,15 +11,15 @@
 <body>
 
 <h1>This is dashboard you will reach here after login url wiht ${somekey}. Hi ! ${username} , ${password}</h1>
-<table class="modulesTable">
-  <tr>
-    <div class="studentModule"><td>student module</td></div>
-    <div class="classModule"><td>class module</td></div>
-  </tr>
-  <tr>
-    <div class="subjectModule"><td>subject module</td></div>
-    <div class="teacherModule"><td>teacher module</td></div>
-  </tr>
-</table>
+
+<a href="studentModule"><button type="button" name="student_module">student module</button></a><br><br>
+
+<a href="classModule"><button type="button" name="class_module">class module</button></a><br><br>
+
+<a href="teacherModule"><button type="button" name="teacher_module">teacher module</button></a><br><br>
+
+<a href="subjectModule"><button type="button" name="subject_module">subject module</button></a><br><br>
+
+
 </body>
 </html>

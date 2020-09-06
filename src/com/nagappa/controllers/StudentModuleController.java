@@ -23,9 +23,28 @@ public class StudentModuleController {
 		return "studentModule";
 	}
 	
+	@RequestMapping(value ="checkStudent")
+	public String checkStudent() {
+		return "checkStudent";
+	}
+
+	@RequestMapping(value="getStudent")
+	public String getStudent(@RequestParam("admNo")String admissionNo,ModelMap map) {
+		String view="checkStudent";
+		int admNo = Integer.parseInt(admissionNo);
+		
+		if(admissionNo.isEmpty()) {
+			map.addAttribute("error","admission number is mandatory");
+			return view;
+		}
+		return view;
+	}
+	
+	
 	@RequestMapping(value ="addStudent")
 	public String addStudent() {
-		return "addStudent";
+		return "studentModule";
+		
 	}
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })

@@ -34,6 +34,19 @@ public class ClassEntityDaoImpl implements ClassEntityDao{
 		return resultDB;
 	}
 
+	@SuppressWarnings({"unchecked","rawtypes"})
+	@Override
+	public List<ClassEntity> getClassEntity(ClassEntity classEntity) {
+		this.txn = this.session.beginTransaction();
+		String queryString = "from ClassEntity c where c.section = :section and c.value=:value";
+		Query query = session.createQuery(queryString);
+		query.setParameter("section", classEntity.getSection());
+		query.setParameter("value", classEntity.getValue());
+		List<ClassEntity> resultDB = query.getResultList();
+		txn.commit();
+		return resultDB;
+	}
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
 	public List<ClassEntity> getClassEntity(char section) {
 		this.txn = this.session.beginTransaction();
@@ -53,17 +66,16 @@ public class ClassEntityDaoImpl implements ClassEntityDao{
 		
 	}
 
+	@SuppressWarnings("rawtypes")
 	@Override
 	public void deleteClassEntity(ClassEntity classEntity) {
-		int value = classEntity.getValue();
-		int sec = classEntity.getSection();
 		this.txn = this.session.beginTransaction();
 		String queryString ="delete from ClassEntity c where c.section= :section and c.value= :value";
 		Query query = session.createQuery(queryString);
-		query.setParameter("section",sec);
+		query.setParameter("section",classEntity.getSection());
+		query.setParameter("value", classEntity.getValue());
 		query.executeUpdate();
 		this.txn.commit();
-		
 	}
 
 	@Override
@@ -71,5 +83,7 @@ public class ClassEntityDaoImpl implements ClassEntityDao{
 		// TODO Auto-generated method stub
 		
 	}
+
+	
 
 }

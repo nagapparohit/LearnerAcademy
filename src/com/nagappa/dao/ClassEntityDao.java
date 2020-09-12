@@ -8,6 +8,7 @@ public interface ClassEntityDao {
 
 	public List<ClassEntity> getAllClasses();
 	public List<ClassEntity> getClassEntity(char section);
+	public List<ClassEntity> getClassEntity(ClassEntity classEntity);
 	public void addClassEntity(ClassEntity classEntity);
 	public void deleteClassEntity(ClassEntity classEntity);
 	public void updateClassEntity(ClassEntity classEntity);

@@ -19,6 +19,7 @@
 			<input type="text" name="lname" placeholder="Enter last name"><br><br>
 			<input type="text" name="rollNo" placeholder="Enter Roll No"><br><br>
 			<input type="submit" name="Submit"><br><br>
+			<a href="studentModule"><button type="button" name="Back">Go Back</button></a>
 		</form>
 		<span>${invalidCredentials}</span>
 		<span>${error}</span>

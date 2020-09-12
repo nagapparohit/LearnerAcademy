@@ -12,6 +12,9 @@
 
 <a href="checkStudent"><button type="button" name="checkStudent">check student</button></a><br><br>
 
+
+
+
 <span>${error}</span>
 </body>
 </html>

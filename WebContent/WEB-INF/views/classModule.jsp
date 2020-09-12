@@ -11,8 +11,8 @@
 
 	<div class="login_form">
 		<form action="saveClass" method="post">
-			<input type="text" name="section" placeholder="Enter Admission No"><br><br>
-			<input type="text" name="value" placeholder="Enter Address No"><br><br>
+			<input type="text" name="section" placeholder="Enter Section"><br><br>
+			<input type="text" name="value" placeholder="Enter Standard"><br><br>
 			<input type="submit" name="Submit"><br><br>
 		</form>
 		<span>${invalidCredentials}</span>

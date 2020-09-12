@@ -18,16 +18,22 @@ public class ClassModuleController {
 	
 	@RequestMapping(value = "saveClass")
 	public String saveClass(@RequestParam("section")String section,@RequestParam("value")String value,ModelMap map) {
+		String view = "classModule";
 		int val = Integer.parseInt(value);
 		char c = section.charAt(0);
+		
 		ClassEntity classEntity = new ClassEntity();
 		classEntity.setSection(c);
 		classEntity.setValue(val);
-		
 		ClassEntityDaoImpl classDao = new ClassEntityDaoImpl();
-		classDao.addClassEntity(classEntity);
+		if(classDao.getClassEntity(classEntity).isEmpty()) {
+			classDao.addClassEntity(classEntity);
+			map.addAttribute("error","class sucseffully saved");
+		}else {
+			map.addAttribute("error","class already exists");
+			view = "classModule";
+		}
 		classDao.closeClassEntityDaoImplSession();
-		map.addAttribute("error","class sucseffully saved");
-		return "classModule";
+		return view;
 	}
 }

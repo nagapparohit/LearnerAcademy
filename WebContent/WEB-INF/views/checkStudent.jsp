@@ -16,5 +16,6 @@
 		<span>${invalidCredentials}</span>
 		<span>${error}</span>
 	</div>
+	<a href="studentModule"><button type="button" name="Back">Go Back</button></a>
 </body>
 </html>

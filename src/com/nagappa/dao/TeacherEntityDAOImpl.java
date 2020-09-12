@@ -71,6 +71,13 @@ public class TeacherEntityDAOImpl implements TeacherEntityDAO{
 		query.executeUpdate();
 		this.txn.commit();
 	}
+
+	@Override
+	public void saveTeacherEntity(TeacherEntity teacher) {
+		this.txn = this.session.beginTransaction();
+		this.session.save(teacher);
+		this.txn.commit();
+	}
 	
 	
 }

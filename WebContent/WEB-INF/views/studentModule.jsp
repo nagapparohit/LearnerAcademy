@@ -7,7 +7,7 @@
 <title>Student Module</title>
 </head>
 <body>
-
+<h2>Hi ${username}</h2>
 <a href="addStudent"><button type="button" name="addStudent">Add student</button></a><br><br>
 
 <a href="checkStudent"><button type="button" name="checkStudent">check student</button></a><br><br>

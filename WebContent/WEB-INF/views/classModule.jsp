@@ -7,7 +7,7 @@
 <title>Add Class</title>
 </head>
 <body>
-
+<h2>Hi ${username}</h2>
 
 	<div class="login_form">
 		<form action="saveClass" method="post">

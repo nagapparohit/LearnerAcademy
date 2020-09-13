@@ -10,7 +10,8 @@
 </head>
 <body>
 
-<h1>This is dashboard you will reach here after login url wiht ${somekey}. Hi ! ${username} , ${password}</h1>
+
+<h1>This is dashboard you will reach here after login url wiht ${somekey}. Hi ! ${username} , ${password}, ${isAdmin}</h1>
 
 <a href="studentModule"><button type="button" name="student_module">student module</button></a><br><br>
 
@@ -19,6 +20,7 @@
 <a href="teacherModule"><button type="button" name="teacher_module">teacher module</button></a><br><br>
 
 <a href="subjectModule"><button type="button" name="subject_module">subject module</button></a><br><br>
+
 
 
 </body>

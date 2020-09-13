@@ -10,12 +10,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.nagappa.dao.HibernateUtil;
 import com.nagappa.model.StudentEntity;
 import com.nagappa.model.UserEntity;
 
 @Controller
+@SessionAttributes({"username","isAdmin"})
 public class StudentModuleController {
 
 	@RequestMapping(value = "studentModule")
@@ -28,6 +30,7 @@ public class StudentModuleController {
 		return "checkStudent";
 	}
 
+	@SuppressWarnings("unchecked")
 	@RequestMapping(value="getStudent")
 	public String getStudent(@RequestParam("admNo")String admissionNo,ModelMap map) {
 		String view="checkStudent";

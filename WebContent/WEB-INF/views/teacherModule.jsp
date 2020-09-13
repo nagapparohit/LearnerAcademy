@@ -9,7 +9,7 @@
 <title>Teacher Module</title>
 </head>
 <body>
-
+<h2>Hi ${username}</h2>
 	<div class="login_form">
 		<form action="saveTeacher" method="post">
 			<input type="text" name="name" placeholder="Enter name"><br><br>

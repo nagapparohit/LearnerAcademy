@@ -10,8 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
-
 import com.nagappa.dao.HibernateUtil;
 import com.nagappa.model.UserEntity;
 
@@ -24,7 +22,7 @@ public class SignupController {
 		return "signup";
 	}
 	
-	@SuppressWarnings({ "unchecked", "unused", "rawtypes" })
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@RequestMapping(value = "register")
 	public String register(@RequestParam("username")String username,@RequestParam("password")String password,ModelMap map) {
 		

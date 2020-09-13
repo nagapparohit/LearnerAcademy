@@ -2,18 +2,18 @@ package com.nagappa.controllers;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
-
 import com.nagappa.dao.UserEntityDAOImpl;
 import com.nagappa.model.UserEntity;
 
 @Controller
-@SessionAttributes({"username","isAdmin"})
 public class AuthController {
 
 
@@ -32,7 +32,7 @@ public class AuthController {
 	}
 
 	@RequestMapping(value="login", method=RequestMethod.POST)
-	public String isValidUser(@RequestParam("username")String username,@RequestParam("password")String password,ModelMap map) {
+	public String isValidUser(HttpServletRequest request,@RequestParam("username")String username,@RequestParam("password")String password,ModelMap map) {
 		String view="login";
 		try {
 			String userCheck = (String)map.getAttribute("username");
@@ -58,9 +58,10 @@ public class AuthController {
 				int isAdmin = result.getIsAdmin();
 				if(password.equals(pass)) {
 					view="dashboard";
-					map.addAttribute("username",user);
+					HttpSession session = request.getSession();
+					session.setAttribute("username",user );
+					session.setAttribute("isAdmin", isAdmin);
 					map.addAttribute("password",pass);
-					map.addAttribute("isAdmin",isAdmin);
 				}else {
 					map.addAttribute("invalidCredentials","you have entered invalid credentials");
 				}

@@ -13,6 +13,8 @@
 
 <h1>This is dashboard you will reach here after login url wiht ${somekey}. Hi ! ${username} , ${password}, ${isAdmin}</h1>
 
+	<a href="logout"><button type="button" name="logout">Logout</button></a>
+	
 <a href="studentModule"><button type="button" name="student_module">student module</button></a><br><br>
 
 <a href="classModule"><button type="button" name="class_module">class module</button></a><br><br>

@@ -10,6 +10,8 @@
 </head>
 <body>
 <h2>Hi ${username}</h2>
+	<a href="logout"><button type="button" name="logout">Logout</button></a>
+	<a href="login"><button type="button" name="home">Home</button></a>
 	<div class="login_form">
 		<form action="saveTeacher" method="post">
 			<input type="text" name="name" placeholder="Enter name"><br><br>

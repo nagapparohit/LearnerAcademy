@@ -30,7 +30,7 @@ public class StudentModuleController {
 		return "checkStudent";
 	}
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@RequestMapping(value="getStudent")
 	public String getStudent(@RequestParam("admNo")String admissionNo,ModelMap map) {
 		String view="checkStudent";
@@ -65,8 +65,7 @@ public class StudentModuleController {
 	
 	@RequestMapping(value ="addStudent")
 	public String addStudent() {
-		return "addStudent";
-		
+		return "addStudent";	
 	}
 	
 	@SuppressWarnings({ "unchecked", "rawtypes" })

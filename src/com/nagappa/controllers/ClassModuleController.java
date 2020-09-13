@@ -10,7 +10,6 @@ import com.nagappa.dao.ClassEntityDaoImpl;
 import com.nagappa.model.ClassEntity;
 
 @Controller
-@SessionAttributes({"username","isAdmin"})
 public class ClassModuleController {
 
 	@RequestMapping(value = "classModule")

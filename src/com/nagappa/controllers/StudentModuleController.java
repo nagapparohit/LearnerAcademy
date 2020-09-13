@@ -17,7 +17,6 @@ import com.nagappa.model.StudentEntity;
 import com.nagappa.model.UserEntity;
 
 @Controller
-@SessionAttributes({"username","isAdmin"})
 public class StudentModuleController {
 
 	@RequestMapping(value = "studentModule")

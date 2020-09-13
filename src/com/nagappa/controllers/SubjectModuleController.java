@@ -11,7 +11,6 @@ import com.nagappa.dao.SubjectEntityDAOImpl;
 import com.nagappa.model.SubjectEntity;
 
 @Controller
-@SessionAttributes({"username","isAdmin"})
 public class SubjectModuleController {
 
 	@RequestMapping(value = "subjectModule")

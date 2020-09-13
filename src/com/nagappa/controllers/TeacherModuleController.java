@@ -11,7 +11,6 @@ import com.nagappa.dao.TeacherEntityDAOImpl;
 import com.nagappa.model.TeacherEntity;
 
 @Controller
-@SessionAttributes({"username","isAdmin"})
 public class TeacherModuleController {
 
 	@RequestMapping(value = "teacherModule")

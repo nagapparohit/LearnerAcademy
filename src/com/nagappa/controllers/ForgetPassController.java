@@ -17,7 +17,6 @@ import com.nagappa.dao.HibernateUtil;
 import com.nagappa.model.UserEntity;
 
 @Controller
-@SessionAttributes({"username","isAdmin"})
 public class ForgetPassController {
 
 	@RequestMapping(value = "forget_password")

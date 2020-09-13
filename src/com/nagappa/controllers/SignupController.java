@@ -16,7 +16,6 @@ import com.nagappa.dao.HibernateUtil;
 import com.nagappa.model.UserEntity;
 
 @Controller
-@SessionAttributes({"username","isAdmin"})
 public class SignupController {
 
 	

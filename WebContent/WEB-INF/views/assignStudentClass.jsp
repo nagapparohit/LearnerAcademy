@@ -9,6 +9,8 @@
 <title>Assign Student to class</title>
 </head>
 <body>
-
+${selectStudent}
+${selectClass}
+<a hreft=""><button type="button" name="addStudentToClass">Save</button></a>
 </body>
 </html>

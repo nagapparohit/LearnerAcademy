@@ -39,7 +39,7 @@ public class AssignStuToClassController {
 		String classOptionTag="";
 		for(ClassEntity std : listClasses) {
 			char sec = std.getSection();
-			int value = std.getId();
+			int value = std.getValue();
 			String key=String.valueOf(value)+sec;
 			
 			classOptionTag += "<option value='"+key+"'>"+value+" "+sec+"</option>";
@@ -47,6 +47,6 @@ public class AssignStuToClassController {
 		String finalSelectClassString = selectClassOpenTag+classOptionTag+selectClassCloseTag;
 		map.addAttribute("selectStudent", finalSelectStudentString);
 		map.addAttribute("selectClass", finalSelectClassString);
-		return "assignstudentClass";
+		return "assignStudentClass";
 	}
 }

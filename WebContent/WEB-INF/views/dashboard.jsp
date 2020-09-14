@@ -23,7 +23,7 @@
 
 <a href="subjectModule"><button type="button" name="subject_module">subject module</button></a><br><br>
 
-
+<a href="assignS2C"><button type="button" name="assignStudentTOClasses">Assign student to classes</button></a>
 
 </body>
 </html>

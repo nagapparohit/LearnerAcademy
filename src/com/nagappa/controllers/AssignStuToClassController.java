@@ -23,7 +23,7 @@ public class AssignStuToClassController {
 		StudentEntityDaoImpl studentDao = new StudentEntityDaoImpl();
 		List<StudentEntity> listStudent = studentDao.getAllStudent();
 		studentDao.closeSession();
-		
+	
 		String selectStudentOpenTag = "<select name='student' id='student'>";
 		String selectStudentCloseTag ="</select>";
 		String studentsOptionTag="";

@@ -11,6 +11,6 @@
 <body>
 ${selectStudent}
 ${selectClass}
-<a hreft=""><button type="button" name="addStudentToClass">Save</button></a>
+<a href="saveS2C"><button type="button" name="addStudentToClass">Save</button></a>
 </body>
 </html>

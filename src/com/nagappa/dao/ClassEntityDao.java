@@ -3,6 +3,7 @@ package com.nagappa.dao;
 import java.util.List;
 
 import com.nagappa.model.ClassEntity;
+import com.nagappa.model.StudentEntity;
 
 public interface ClassEntityDao {
 
@@ -12,5 +13,6 @@ public interface ClassEntityDao {
 	public void addClassEntity(ClassEntity classEntity);
 	public void deleteClassEntity(ClassEntity classEntity);
 	public void updateClassEntity(ClassEntity classEntity);
+	public void addStudentToClass(StudentEntity studentEntity);
 	
 }

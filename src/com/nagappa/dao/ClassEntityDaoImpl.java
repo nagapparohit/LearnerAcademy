@@ -8,6 +8,7 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import com.nagappa.model.ClassEntity;
+import com.nagappa.model.StudentEntity;
 
 public class ClassEntityDaoImpl implements ClassEntityDao{
 
@@ -81,6 +82,14 @@ public class ClassEntityDaoImpl implements ClassEntityDao{
 	@Override
 	public void updateClassEntity(ClassEntity classEntity) {
 		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void addStudentToClass(StudentEntity studentEntity) {
+		this.txn = this.session.beginTransaction();
+		
+		this.txn.commit();
 		
 	}
 

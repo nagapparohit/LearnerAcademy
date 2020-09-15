@@ -1,5 +1,6 @@
 package com.nagappa.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -81,16 +82,27 @@ public class ClassEntityDaoImpl implements ClassEntityDao{
 
 	@Override
 	public void updateClassEntity(ClassEntity classEntity) {
-		// TODO Auto-generated method stub
+		this.txn = this.session.beginTransaction();
+		this.session.update(classEntity);
+		this.txn.commit();
 		
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@Override
-	public void addStudentToClass(StudentEntity studentEntity) {
+	public void addStudentToClass(StudentEntity studentEntity,ClassEntity classEntity) {
 		this.txn = this.session.beginTransaction();
-		
+		String queryString ="from ClassEntity where section=:sec and value=:value";
+		Query query = this.session.createQuery(queryString);
+		query.setParameter("sec", classEntity.getSection());
+		query.setParameter("value",classEntity.getValue());
+		List<ClassEntity> resultdb = query.getResultList();
 		this.txn.commit();
-		
+		ClassEntity cls = resultdb.get(0);
+		List<StudentEntity> listStudent = new ArrayList<>();
+		listStudent.add(studentEntity);
+		cls.setStudents(listStudent);
+		this.updateClassEntity(cls);
 	}
 
 	

@@ -41,11 +41,10 @@ public class ClassEntity {
 		super();
 	}
 	
-	public ClassEntity(int value, char section,int id) {
+	public ClassEntity(int value, char section) {
 		super();
 		this.value = value;
 		this.section = section;
-		this.id = id;
 	}
 	
 	public int getId() {
@@ -66,6 +65,22 @@ public class ClassEntity {
 	}
 	public void setSection(char section) {
 		this.section = section;
+	}
+
+	public Collection<StudentEntity> getStudents() {
+		return students;
+	}
+
+	public void setStudents(Collection<StudentEntity> students) {
+		this.students = students;
+	}
+
+	public Map<SubjectEntity, TeacherEntity> getSubTeacher() {
+		return subTeacher;
+	}
+
+	public void setSubTeacher(Map<SubjectEntity, TeacherEntity> subTeacher) {
+		this.subTeacher = subTeacher;
 	}
 	
 	

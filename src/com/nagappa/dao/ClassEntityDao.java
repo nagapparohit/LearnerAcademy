@@ -13,6 +13,6 @@ public interface ClassEntityDao {
 	public void addClassEntity(ClassEntity classEntity);
 	public void deleteClassEntity(ClassEntity classEntity);
 	public void updateClassEntity(ClassEntity classEntity);
-	public void addStudentToClass(StudentEntity studentEntity);
+	public void addStudentToClass(StudentEntity studentEntity,ClassEntity classEntity);
 	
 }

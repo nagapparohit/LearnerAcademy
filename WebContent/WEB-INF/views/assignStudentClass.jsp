@@ -9,8 +9,10 @@
 <title>Assign Student to class</title>
 </head>
 <body>
+<form action="saveS2C" method="post">
 ${selectStudent}
 ${selectClass}
-<a href="saveS2C"><button type="button" name="addStudentToClass">Save</button></a>
+<input type="submit" name="addStudentToClass" value="Save">
+</form>
 </body>
 </html>

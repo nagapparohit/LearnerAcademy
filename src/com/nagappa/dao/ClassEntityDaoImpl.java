@@ -63,7 +63,7 @@ public class ClassEntityDaoImpl implements ClassEntityDao{
 	@Override
 	public void addClassEntity(ClassEntity classEntity) {
 		this.txn = this.session.beginTransaction();
-		session.save(classEntity);
+		this.session.save(classEntity);
 		this.txn.commit();
 		
 	}
@@ -83,6 +83,7 @@ public class ClassEntityDaoImpl implements ClassEntityDao{
 	@Override
 	public void updateClassEntity(ClassEntity classEntity) {
 		this.txn = this.session.beginTransaction();
+		System.out.println("about to update from update method");
 		this.session.update(classEntity);
 		this.txn.commit();
 		
@@ -102,7 +103,7 @@ public class ClassEntityDaoImpl implements ClassEntityDao{
 		List<StudentEntity> listStudent = new ArrayList<>();
 		listStudent.add(studentEntity);
 		cls.setStudents(listStudent);
-		this.updateClassEntity(cls);
+		this.addClassEntity(cls);
 	}
 
 	

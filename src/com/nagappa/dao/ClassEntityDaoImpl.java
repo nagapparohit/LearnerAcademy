@@ -95,18 +95,22 @@ public class ClassEntityDaoImpl implements ClassEntityDao{
 		
 		  this.txn = this.session.beginTransaction();
 		  String queryString = "from ClassEntity where section=:sec and value=:value"; 
-		  Query query = this.session.createQuery(queryString); query.setParameter("sec",
-		  classEntity.getSection());
+		  Query query = this.session.createQuery(queryString);
+		  query.setParameter("sec",classEntity.getSection());
 		  query.setParameter("value",classEntity.getValue()); 
 		  List<ClassEntity> resultdb = query.getResultList();
 		  this.txn.commit();
+		  
+		  
 		  ClassEntity cls = resultdb.get(0);
 		  
-		  cls.addStudent(studentEntity);
-		  
-		  System.out.println("about to save student in class");
+		  studentEntity.setClassEntity(cls);
+		  //System.out.println("before adding studnet class object is "+cls.toString());
+		  //cls.addStudent(studentEntity);
+		  //System.out.println("after adding studnet class object is "+cls.toString()); 
+		  //System.out.println("about to save student in class");
 		  this.txn = this.session.beginTransaction();
-		  this.session.save(cls);
+		  this.session.update("com.nagappa.model.StudentEntity",studentEntity);
 		  this.txn.commit();
 		  
 		 

@@ -84,6 +84,12 @@ public class ClassEntity {
 	public void setSubTeacher(Map<SubjectEntity, TeacherEntity> subTeacher) {
 		this.subTeacher = subTeacher;
 	}
+
+	@Override
+	public String toString() {
+		return "ClassEntity [id=" + id + ", value=" + value + ", section=" + section + ", students=" + students
+				+ ", subTeacher=" + subTeacher + "]";
+	}
 	
 	
 	

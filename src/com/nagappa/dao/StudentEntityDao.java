@@ -7,6 +7,6 @@ import com.nagappa.model.StudentEntity;
 public interface StudentEntityDao {
 
 	public List<StudentEntity> getAllStudent();
-	
+	public List<StudentEntity> getStudentByAdmNo(int admNo);
 
 }

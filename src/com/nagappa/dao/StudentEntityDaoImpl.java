@@ -34,5 +34,17 @@ public class StudentEntityDaoImpl implements StudentEntityDao{
 		return students;
 	}
 
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@Override
+	public List<StudentEntity> getStudentByAdmNo(int admNo) {
+		this.txn = this.session.beginTransaction();
+		String queryString = "from StudentEntity where addmissionNo = :admNo";
+		Query query = this.session.createQuery(queryString);
+		query.setParameter("admNo", admNo);
+		List<StudentEntity>  students = query.getResultList();
+		this.txn.commit();
+		return students;
+	}
+
 	
 }

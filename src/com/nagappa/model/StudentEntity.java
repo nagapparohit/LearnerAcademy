@@ -29,6 +29,9 @@ public class StudentEntity {
 	@Column(name="address")
 	private String address;
 	
+	@OneToOne
+	private ClassEntity classEntity;
+	
 	public StudentEntity() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -43,6 +46,13 @@ public class StudentEntity {
 		this.address = address;
 	}
 
+	public ClassEntity getClassEntity() {
+		return classEntity;
+	}
+	public void setClassEntity(ClassEntity classEntity) {
+		this.classEntity = classEntity;
+	}
+	
 	public int getRollNo() {
 		return rollNo;
 	}

@@ -1,6 +1,8 @@
 package com.nagappa.model;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 
 import javax.persistence.Column;
@@ -25,14 +27,8 @@ public class ClassEntity {
 	@Column(name = "section")
 	private char section;
 	
-	//@ManyToMany
-	//private Collection<TeacherEntity> teachers;
-	
-	//@ManyToMany
-	//private Collection<SubjectEntity> subjects;
-	
-	@OneToMany
-	private Collection<StudentEntity> students;
+	@OneToMany(mappedBy = "classEntity")
+	private List<StudentEntity> students = new ArrayList<>();
 	
 	@ManyToMany
 	private Map<SubjectEntity,TeacherEntity> subTeacher;
@@ -67,13 +63,19 @@ public class ClassEntity {
 		this.section = section;
 	}
 
-	public Collection<StudentEntity> getStudents() {
+	public List<StudentEntity> getStudents() {
 		return students;
 	}
 
-	public void setStudents(Collection<StudentEntity> students) {
-		this.students = students;
+	public void addStudent(StudentEntity student) {
+		this.students.add(student);
 	}
+	
+	public void removeStudent(StudentEntity student) {
+		this.students.remove(student);
+	}
+	
+	
 
 	public Map<SubjectEntity, TeacherEntity> getSubTeacher() {
 		return subTeacher;

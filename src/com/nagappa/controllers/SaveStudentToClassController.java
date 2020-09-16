@@ -26,10 +26,9 @@ public class SaveStudentToClassController {
 		classEntity.setSection(sec);
 		classEntity.setValue(classValue);
 		
-		ClassEntityDaoImpl clsDao = new ClassEntityDaoImpl();
-		clsDao.addStudentToClass(studentEntity, classEntity);
-		clsDao.closeClassEntityDaoImplSession();
-		
+		ClassEntityDaoImpl classDao = new ClassEntityDaoImpl();
+		classDao.addStudentToClass(studentEntity, classEntity);
+		classDao.closeClassEntityDaoImplSession();
 		return "redirect:assignS2C";
 	}
 }

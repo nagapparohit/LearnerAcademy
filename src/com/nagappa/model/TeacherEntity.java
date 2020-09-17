@@ -1,10 +1,16 @@
 package com.nagappa.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -18,6 +24,12 @@ public class TeacherEntity {
 	private String name;
 	@Column(name = "contact_no")
 	private String contactNo;
+	
+	//@ManyToMany
+	//@JoinTable(name="teacher_classentity",
+	//		   joinColumns=@JoinColumn(name="teacher_id"),
+	//		   inverseJoinColumns=@JoinColumn(name="classentity_id"))
+	//private List<ClassEntity> classEntity = new ArrayList<>();
 	
 	
 	public TeacherEntity() {

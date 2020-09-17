@@ -2,6 +2,7 @@ package com.nagappa.model;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -30,8 +31,10 @@ public class ClassEntity {
 	@OneToMany(mappedBy = "classEntity")
 	private List<StudentEntity> students = new ArrayList<>();
 	
+	//@ManyToMany(mappedBy = "classEntity")
+	//private List<TeacherEntity> teachers = new ArrayList<>();
 	@ManyToMany
-	private Map<SubjectEntity,TeacherEntity> subTeacher;
+	private Map<SubjectEntity,TeacherEntity> subTeacher = new HashMap<>();
 	
 	public ClassEntity() {
 		super();
@@ -77,20 +80,20 @@ public class ClassEntity {
 	
 	
 
-	public Map<SubjectEntity, TeacherEntity> getSubTeacher() {
-		return subTeacher;
-	}
+	/*
+	 * public Map<SubjectEntity, TeacherEntity> getSubTeacher() { return subTeacher;
+	 * }
+	 * 
+	 * public void setSubTeacher(Map<SubjectEntity, TeacherEntity> subTeacher) {
+	 * this.subTeacher = subTeacher; }
+	 */
 
-	public void setSubTeacher(Map<SubjectEntity, TeacherEntity> subTeacher) {
-		this.subTeacher = subTeacher;
-	}
+	@Override public String toString() { 
+		return "ClassEntity [id=" + id +
+			", value=" + value + ", section=" + section + ", students=" + students +
+			", subTeacher=" + subTeacher + "]"; }
 
-	@Override
-	public String toString() {
-		return "ClassEntity [id=" + id + ", value=" + value + ", section=" + section + ", students=" + students
-				+ ", subTeacher=" + subTeacher + "]";
-	}
-	
+
 	
 	
 	

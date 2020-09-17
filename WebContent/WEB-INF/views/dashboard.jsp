@@ -25,5 +25,7 @@
 
 <a href="assignS2C"><button type="button" name="assignStudentTOClasses">Assign student to classes</button></a>
 
+<a href="assignTS2C"><button type="button" name="assignTS2C">Assign subject and teacher to a class</button></a>
+
 </body>
 </html>

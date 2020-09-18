@@ -14,8 +14,8 @@ import com.nagappa.model.TeacherEntity;
 
 @Controller
 public class SaveTeachStuClassController {
-
-	@RequestMapping(name = "saveTS2C")
+	
+	@RequestMapping("saveTS2C")
 	public String saveTS2C(@RequestParam("standard")String std,@RequestParam("subject")String sub,
 						   @RequestParam("teacher")String teacher,ModelMap map) {
 		

@@ -88,6 +88,7 @@ public class ClassEntityDaoImpl implements ClassEntityDao{
 		Query query = session.createQuery(queryString);
 		query.setParameter("id",id);
 		List<ClassEntity> resultDb = query.getResultList();
+		this.txn.commit();
 		return resultDb.get(0);
 	}
 

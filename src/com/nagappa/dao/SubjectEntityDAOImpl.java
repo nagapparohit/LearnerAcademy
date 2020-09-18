@@ -45,7 +45,20 @@ public class SubjectEntityDAOImpl implements SubjectEntityDao{
 		this.txn.commit();
 		return subject;
 	}
+	
+	
 
+	@Override
+	public SubjectEntity getSubjectById(int id) {
+		this.txn = this.session.beginTransaction();
+		String queryString ="from SubjectEntity s where s.id = :id";
+		Query query = this.session.createQuery(queryString);
+		query.setParameter("id", id);
+		List<SubjectEntity> resultDb = query.getResultList();
+		return resultDb.get(0);
+	}
+	
+	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
 	public List<SubjectEntity> getSubject(String name) {

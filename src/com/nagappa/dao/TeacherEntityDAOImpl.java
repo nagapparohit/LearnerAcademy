@@ -78,6 +78,20 @@ public class TeacherEntityDAOImpl implements TeacherEntityDAO{
 		this.session.save(teacher);
 		this.txn.commit();
 	}
+
+	@Override
+	public TeacherEntity getTeacherById(int id) {
+		this.txn = this.session.beginTransaction();
+		String queryString = "from TeacherEntity t where t.id=:id";
+		Query query = this.session.createQuery(queryString);
+		query.setParameter("id",id);
+		List<TeacherEntity> resultDB = query.getResultList();
+		return resultDB.get(0);
+	}
+	
+	
+	
+	
 	
 	
 }

@@ -1,6 +1,5 @@
 package com.nagappa.dao;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -10,6 +9,8 @@ import org.hibernate.query.Query;
 
 import com.nagappa.model.ClassEntity;
 import com.nagappa.model.StudentEntity;
+import com.nagappa.model.SubjectEntity;
+import com.nagappa.model.TeacherEntity;
 
 public class ClassEntityDaoImpl implements ClassEntityDao{
 
@@ -79,6 +80,16 @@ public class ClassEntityDaoImpl implements ClassEntityDao{
 		query.executeUpdate();
 		this.txn.commit();
 	}
+	
+	@Override
+	public ClassEntity getClassbyId(int id) {
+		this.txn = this.session.beginTransaction();
+		String queryString = "from ClassEntity c where c.id = :id";
+		Query query = session.createQuery(queryString);
+		query.setParameter("id",id);
+		List<ClassEntity> resultDb = query.getResultList();
+		return resultDb.get(0);
+	}
 
 	@Override
 	public void updateClassEntity(ClassEntity classEntity) {
@@ -117,6 +128,16 @@ public class ClassEntityDaoImpl implements ClassEntityDao{
 		 
 	}
 
+	@Override
+	public void assignSubToTeacherInClass(SubjectEntity subjectEntity, TeacherEntity teacherEntity,
+			ClassEntity classEntity) {
+		classEntity.addSubjectToTeacher(subjectEntity, teacherEntity);
+		this.txn = this.session.beginTransaction();
+		this.session.update("com.nagappa.model.ClassEntity",classEntity);
+		this.txn.commit();
+	}
+
+	
 	
 
 }

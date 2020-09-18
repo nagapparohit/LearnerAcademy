@@ -41,8 +41,8 @@ public class AssignTeachSubToClass {
 		for(ClassEntity std : listClass) {
 			char sec = std.getSection();
 			int value = std.getValue();
-			String key=String.valueOf(value)+sec;
-			
+			//String key=String.valueOf(value)+sec;
+			String key = String.valueOf(std.getId());
 			classOptionTag += "<option value='"+key+"'>"+value+" "+sec+"</option>";
 		}
 		String finalSelectClassString = selectClassOpenTag+classOptionTag+selectClassCloseTag;

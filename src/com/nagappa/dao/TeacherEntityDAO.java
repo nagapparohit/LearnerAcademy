@@ -11,5 +11,6 @@ public interface TeacherEntityDAO {
 	List<TeacherEntity> getTeachers(TeacherEntity teacher);
 	void deleteTeacherEntity(TeacherEntity teacher);
 	void saveTeacherEntity(TeacherEntity teacher);
+	TeacherEntity getTeacherById(int id);
 	
 }

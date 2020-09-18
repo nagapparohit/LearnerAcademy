@@ -79,6 +79,12 @@ public class ClassEntity {
 	}
 	
 	
+	public void addSubjectToTeacher(SubjectEntity sub,TeacherEntity teacher) {
+		this.subTeacher.put(sub, teacher);
+	}
+	
+	
+	
 
 	/*
 	 * public Map<SubjectEntity, TeacherEntity> getSubTeacher() { return subTeacher;

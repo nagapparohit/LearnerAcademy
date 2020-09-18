@@ -13,5 +13,6 @@ public interface SubjectEntityDao {
 	public void deleteSubject(SubjectEntity subject);
 	public void updateSubject(SubjectEntity subject);
 	public void addSubject(SubjectEntity subject);
+	public SubjectEntity getSubjectById(int id);
 	
 }

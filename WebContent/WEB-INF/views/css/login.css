@@ -109,6 +109,40 @@ body{
 	border-radius:100px;
 	font-weight:bold;
 }
+
+.addStudent_form{
+   	background:linear-gradient(skyblue,white);
+    border-style:groove;
+    border-radius:100px;
+    text-align:center;
+    width: 500px;
+    height: 400px;
+    padding-top: 30px;
+    margin-left: 30%;
+    margin-top: 50px;
+    padding-bottom:40px;	
+}
+
+.addStudent_form input{
+	background:linear-gradient(skyblue,white);
+	width:300px;
+	text-align:center;
+	border-style:groove;
+	border-radius:100px;
+	height:30px;
+	font-weight:bold;
+}
+
+.addStudent_form button{
+	background:linear-gradient(skyblue,white);
+	width:300px;
+	height:30px;
+	text-align:center;
+	border-style:groove;
+	border-radius:100px;
+	font-weight:bold;
+}
+
 .signup_form{
    	background:linear-gradient(skyblue,white);
     border-style:groove;

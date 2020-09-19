@@ -79,12 +79,7 @@ public class AuthController {
 	}
 
 	public String getDivString() {
-		//int[] stClasees = {1};
-		//int[] ndClasses = {2};
-		//int[] rdClasses = {3};
-		//int[] thClasses = {4,5,6,7,8,9,10,11,12};
-		
-		System.out.println("startign div method");
+		//System.out.println("startign div method");
 		ClassEntityDaoImpl allClassesDao = new ClassEntityDaoImpl();
 		List<ClassEntity> allClasses = allClassesDao.getAllClasses();
 		allClassesDao.closeClassEntityDaoImplSession();
@@ -96,12 +91,12 @@ public class AuthController {
 			int id=cls.getId();
 			char sec = cls.getSection();
 			int std = cls.getValue();
-			String link = "<a href='displayClass?"+id+"'>"+std+"<sup>"+getSuperscript(std)+"</sup>"+sec+"</a>";
+			String link = "<a href='displayClass?"+id+"'>"+std+"<sup>"+getSuperscript(std)+"</sup>"+" "+sec+"</a>";
 			String endDiv = "</div>";
 			divToAddDashboard += startDiv+link+endDiv;
 		}
 		
-		System.out.println("ending div method");
+		//System.out.println("ending div method");
 		return divToAddDashboard;
 	}
 	

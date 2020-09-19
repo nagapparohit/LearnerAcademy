@@ -9,7 +9,7 @@
 <title>Class Report</title>
 </head>
 <body>
-${classInfo}
+<%-- ${classInfo} --%>
 ${studentTable}
 ${subjectTeacherTable}
 </body>

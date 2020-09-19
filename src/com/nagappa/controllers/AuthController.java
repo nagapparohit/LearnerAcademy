@@ -10,7 +10,10 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.nagappa.dao.ClassEntityDaoImpl;
 import com.nagappa.dao.UserEntityDAOImpl;
+import com.nagappa.model.ClassEntity;
 import com.nagappa.model.UserEntity;
 
 @Controller
@@ -62,6 +65,8 @@ public class AuthController {
 					session.setAttribute("username",user );
 					session.setAttribute("isAdmin", isAdmin);
 					map.addAttribute("password",pass);
+					map.addAttribute("classesDiv", getDivString());
+					
 				}else {
 					map.addAttribute("invalidCredentials","you have entered invalid credentials");
 				}
@@ -73,4 +78,43 @@ public class AuthController {
 		return view;
 	}
 
+	public String getDivString() {
+		//int[] stClasees = {1};
+		//int[] ndClasses = {2};
+		//int[] rdClasses = {3};
+		//int[] thClasses = {4,5,6,7,8,9,10,11,12};
+		
+		System.out.println("startign div method");
+		ClassEntityDaoImpl allClassesDao = new ClassEntityDaoImpl();
+		List<ClassEntity> allClasses = allClassesDao.getAllClasses();
+		allClassesDao.closeClassEntityDaoImplSession();
+		String classNameforDiv = "classesDiv";
+		String divToAddDashboard = "";
+		//classesDiv is sting in jsp page
+		for(ClassEntity cls :allClasses) {
+			String startDiv = "<div class='"+classNameforDiv+"'>";
+			int id=cls.getId();
+			char sec = cls.getSection();
+			int std = cls.getValue();
+			String link = "<a href='displayClass?"+id+"'>"+std+"<sup>"+getSuperscript(std)+"</sup>"+sec+"</a>";
+			String endDiv = "</div>";
+			divToAddDashboard += startDiv+link+endDiv;
+		}
+		
+		System.out.println("ending div method");
+		return divToAddDashboard;
+	}
+	
+	public String getSuperscript(int x) {
+		if(x != 1 && x != 2 && x!= 3) {
+			return "th";
+		}else if(x==1) {
+			return "st";
+		}else if(x==2) {
+			return "nd";
+		}else {
+			return "rd";
+		}
+	}
+	
 }

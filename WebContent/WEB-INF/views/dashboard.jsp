@@ -27,5 +27,6 @@ ${username} , ${password}, ${isAdmin}</h1> --%>
 			<li><a href="assignTS2C">Assign Sub &amp; Teach</a></li>
 		</ul>
 	</div>
+	${classesDiv}
 </body>
 </html>

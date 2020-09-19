@@ -2,6 +2,7 @@ package com.nagappa.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -29,7 +30,7 @@ public class StudentEntity {
 	@Column(name="address")
 	private String address;
 	
-	@OneToOne
+	@OneToOne(fetch = FetchType.EAGER)
 	private ClassEntity classEntity;
 	
 	public StudentEntity() {

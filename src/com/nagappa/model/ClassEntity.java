@@ -8,6 +8,7 @@ import java.util.Map;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -28,12 +29,12 @@ public class ClassEntity {
 	@Column(name = "section")
 	private char section;
 	
-	@OneToMany(mappedBy = "classEntity")
+	@OneToMany(mappedBy = "classEntity",fetch = FetchType.EAGER)
 	private List<StudentEntity> students = new ArrayList<>();
 	
 	//@ManyToMany(mappedBy = "classEntity")
 	//private List<TeacherEntity> teachers = new ArrayList<>();
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER)
 	private Map<SubjectEntity,TeacherEntity> subTeacher = new HashMap<>();
 	
 	public ClassEntity() {
@@ -82,6 +83,12 @@ public class ClassEntity {
 	public void addSubjectToTeacher(SubjectEntity sub,TeacherEntity teacher) {
 		this.subTeacher.put(sub, teacher);
 	}
+
+	@Override
+	public String toString() {
+		return "ClassEntity [id=" + id + ", value=" + value + ", section=" + section + ", students=" + students
+				+ ", subTeacher=" + subTeacher + "]";
+	}
 	
 	
 	
@@ -94,11 +101,11 @@ public class ClassEntity {
 	 * this.subTeacher = subTeacher; }
 	 */
 
-	@Override public String toString() { 
-		return "ClassEntity [id=" + id +
-			", value=" + value + ", section=" + section + ", students=" + students +
-			", subTeacher=" + subTeacher + "]"; }
-
+	/*
+	 * @Override public String toString() { return "ClassEntity [id=" + id +
+	 * ", value=" + value + ", section=" + section + ", students=" + students +
+	 * ", subTeacher=" + subTeacher + "]"; }
+	 */
 
 	
 	

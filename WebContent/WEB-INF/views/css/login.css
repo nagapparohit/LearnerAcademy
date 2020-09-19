@@ -24,6 +24,45 @@ body{
 	font-weight:bold;
 }
 
+#dashboard_nav {
+	height : 70px;
+	background:linear-gradient(skyblue,white);
+	padding: 7px 0;
+}
+#dashboard_nav ul{
+	list-style : none;
+}
+
+#dashboard_nav ul li{
+	float : left;
+	padding: 0 30px;
+	height : 30px;
+	border-right : 1px solid  #5d12e7;
+}
+
+#dashboard_nav ul li:last-child{
+	border-right:none;
+}
+
+#dashboard_nav ul li a{
+	text-decoration:none;
+	text-transform:uppercase;
+	font-size:17px;
+	color:#5d12e7;
+	line-height : 30px;
+	transition:font-size 0.2s ease;
+	-webkit-transition:font-size 0.2s ease;
+	-moz-transition:font-size 0.2s ease;
+	-o-transition:font-size 0.2s ease;
+	-ms-transition:font-size 0.2s ease;
+}
+
+#dashboard_nav ul li a:hover{
+	font-size:20px;
+	font-weight:bold;
+	color:#B314DB;
+}
+
 .login_form span{
 	color:red;
 	font-weight:bold;

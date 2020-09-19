@@ -1,6 +1,7 @@
 package com.nagappa.controllers;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.nagappa.dao.ClassEntityDaoImpl;
 import com.nagappa.model.ClassEntity;
 import com.nagappa.model.StudentEntity;
+import com.nagappa.model.SubjectEntity;
+import com.nagappa.model.TeacherEntity;
 
 @Controller
 public class DisplayClassController {
@@ -20,12 +23,41 @@ public class DisplayClassController {
 		ClassEntityDaoImpl classDao = new ClassEntityDaoImpl();
 		ClassEntity cls = classDao.getClassbyId(Integer.parseInt(id));
 		classDao.closeClassEntityDaoImplSession();
-		
+	
+		//subjectTeacherTable
+		map.addAttribute("subjectTeacherTable", getTeacherTable(cls));
 		map.addAttribute("studentTable", getStudentTable(cls));
 		map.addAttribute("classInfo",cls.toString());
+	
 		//classInfo
 		return "displayClass";
 	}
+	
+	public String getTeacherTable(ClassEntity cls) {
+		Map<SubjectEntity,TeacherEntity> subTeach = cls.getSubTeacher();
+		String teacherStartTable = "<table class='teacherTable'>";
+		String teacherTableHeader ="<tr><th>Subject Name</th><th>Teacher Name</th></tr>";
+		String teacherEndTable ="</table>";
+		String teacherTableRows ="";
+		for (Map.Entry<SubjectEntity,TeacherEntity> entry : subTeach.entrySet()) {
+			SubjectEntity sub = entry.getKey();
+			TeacherEntity teach = entry.getValue();
+			String subName = sub.getName();
+			String teachName = teach.getName();
+			String starttr ="<tr>";
+			String f1 = "<td>"+subName+"</td>";
+			String f2 = "<td>"+teachName+"</td>";
+			String endtr ="</tr>";
+			String totalRow = starttr+f1+f2+endtr;
+			//System.out.println(entry.getKey() + "/" + entry.getValue());
+			teacherTableRows += totalRow;
+		}
+		String subjectTeacherTable = teacherStartTable+teacherTableHeader+teacherTableRows+teacherEndTable;
+		return subjectTeacherTable;
+	}
+	
+	
+	
 	
 	public String getStudentTable(ClassEntity cls) {
 		String studentStartTable ="<table class='studentTable'>";

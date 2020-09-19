@@ -216,8 +216,9 @@ body{
 	border : 2px solid black;
 	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   	border-collapse: collapse;
- 	width: 100%;
+ 	display:inline-block;
  	padding: 8px;
+ 	margin:10px;
 }
 
 .studentTable th {
@@ -239,6 +240,45 @@ body{
 .studentTable tr:hover {
 	background-color: #ddd;
 }
+
+
+
+.teacherTable{
+	border : 2px solid black;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  	border-collapse: collapse;
+ 	display:inline-block;
+ 	padding: 8px;
+ 	margin:10px
+}
+
+.teacherTable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #4CAF50;
+  color: white;
+}
+
+.teacherTable td, .teacherTable th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.teacherTable tr:nth-child(even){
+	background-color: #f2f2f2;
+}
+
+.teacherTable tr:hover {
+	background-color: #ddd;
+}
+
+
+
+
+
+
+
+
 
 
 .modulesTable{

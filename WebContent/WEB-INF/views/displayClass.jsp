@@ -11,5 +11,6 @@
 <body>
 ${classInfo}
 ${studentTable}
+${subjectTeacherTable}
 </body>
 </html>

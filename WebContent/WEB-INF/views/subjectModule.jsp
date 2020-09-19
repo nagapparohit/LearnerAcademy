@@ -13,7 +13,7 @@
 <h2>Hi ${username}</h2>
 	<a href="logout"><button type="button" name="logout">Logout</button></a>
 	<a href="login"><button type="button" name="home">Home</button></a>
-	<div class="login_form">
+	<div class="signup_form">
 		<form action="saveSubject" method="post">
 			<input type="text" name="name" placeholder="Enter name"><br><br>
 			<input type="text" name="code" placeholder="Enter code"><br><br>

@@ -1,5 +1,6 @@
 package com.nagappa.controllers;
 
+import java.util.Collections;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.nagappa.comparator.ClassComparator;
 import com.nagappa.dao.ClassEntityDaoImpl;
 import com.nagappa.dao.UserEntityDAOImpl;
 import com.nagappa.model.ClassEntity;
@@ -83,6 +85,7 @@ public class AuthController {
 		ClassEntityDaoImpl allClassesDao = new ClassEntityDaoImpl();
 		List<ClassEntity> allClasses = allClassesDao.getAllClasses();
 		allClassesDao.closeClassEntityDaoImplSession();
+		Collections.sort(allClasses,new ClassComparator());
 		String classNameforDiv = "classesDiv";
 		String divToAddDashboard = "";
 		//classesDiv is sting in jsp page

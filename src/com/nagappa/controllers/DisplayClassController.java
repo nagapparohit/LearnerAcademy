@@ -1,5 +1,6 @@
 package com.nagappa.controllers;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -8,6 +9,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.nagappa.comparator.StudentComprator;
 import com.nagappa.dao.ClassEntityDaoImpl;
 import com.nagappa.model.ClassEntity;
 import com.nagappa.model.StudentEntity;
@@ -70,6 +72,7 @@ public class DisplayClassController {
 		String studentEndTable = "</table>";
 		String studentTableRows ="";
 		List<StudentEntity> students = cls.getStudents();
+		Collections.sort(students,new StudentComprator());
 		for(StudentEntity stu : students) {
 			int admNo = stu.getAddmissionNo();
 			int rollNo = stu.getRollNo();

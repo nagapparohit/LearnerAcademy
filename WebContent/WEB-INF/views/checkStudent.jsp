@@ -15,11 +15,12 @@
 			<input type="text" name="admNo" placeholder="Enter Admission No"><br><br>
 			<input type="submit" name="Submit"><br><br>
 			<a href="logout"><button type="button" name="logout">Logout</button></a><br><br>
-			<a href="login"><button type="button" name="home">Home</button></a>
+			<a href="login"><button type="button" name="home">Home</button></a><br><br>
+			<a href="studentModule"><button type="button" name="Back">Go Back</button></a>
 		</form>
 		<span>${invalidCredentials}</span>
 		<span>${error}</span>
 	</div>
-	<a href="studentModule"><button type="button" name="Back">Go Back</button></a>
+	
 </body>
 </html>

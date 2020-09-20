@@ -12,7 +12,7 @@ public class ClassComparator implements Comparator<ClassEntity> {
 		if(o1.getValue() == o2.getValue()) {
 			return Character.compare(o1.getSection(), o2.getSection());
 		}else {
-			return o1.getValue() - o2.getSection();
+			return o1.getValue() - o2.getValue();
 		}
 	}
 

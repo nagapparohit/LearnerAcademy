@@ -1,5 +1,8 @@
 package com.nagappa.controllers;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,9 +15,21 @@ import com.nagappa.model.TeacherEntity;
 public class TeacherModuleController {
 
 	@RequestMapping(value = "teacherModule")
-	public String teacherModule() {
-		return "teacherModule";
+	public String teacherModule(HttpServletRequest request,ModelMap map) {
+		int isAdmin=0;
+		try {
+			HttpSession session = request.getSession(false);
+			isAdmin = (int) session.getAttribute("isAdmin");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
+		if(isAdmin!=1) {
+			map.addAttribute("notAnAdmin","Sorry ! Only Admin can perform operation on it. kindly login with Admin user");
+			return "redirect:login";
+		}else {
+			return "teacherModule";
+		}
 	}
 	
 	@RequestMapping(value = "saveTeacher",method = RequestMethod.POST)

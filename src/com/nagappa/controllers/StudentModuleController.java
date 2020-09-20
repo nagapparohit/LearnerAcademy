@@ -2,6 +2,9 @@ package com.nagappa.controllers;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -18,8 +21,22 @@ import com.nagappa.model.UserEntity;
 public class StudentModuleController {
 
 	@RequestMapping(value = "studentModule")
-	public String studentModule() {
-		return "studentModule";
+	public String studentModule(HttpServletRequest request,ModelMap map) {
+		
+		int isAdmin=0;
+		try {
+			HttpSession session = request.getSession(false);
+			isAdmin = (int) session.getAttribute("isAdmin");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		if(isAdmin!=1) {
+			map.addAttribute("notAnAdmin","Sorry ! Only Admin can perform operation on it. kindly login with Admin user");
+			return "redirect:login";
+		}else {
+			return "studentModule";
+		}
 	}
 	
 	@RequestMapping(value ="checkStudent")

@@ -17,6 +17,12 @@ body{
 	
 }
 
+.notAnAdmin {
+    text-align: center;
+    font-size: 20px;
+    color: red;
+}
+
 .supScript{
 	font-size:20px;
 }

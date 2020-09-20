@@ -17,15 +17,15 @@ ${username} , ${password}, ${isAdmin}</h1> --%>
 
 	<span class="welcomeUser">Welcome ${username}</span>
 	<span class="logoutButton"><a href="logout">Logout</a></span>
-	<p class="notlogin">${notAnAdmin}</p>
+	<p class="notAnAdmin">${notAnAdmin}</p>
 	<div id="dashboard_nav">
 		<ul>
-			<li><a href="studentModule">student module</a></li>
-			<li><a href="classModule">class module</a></li>
-			<li><a href="teacherModule">teacher module</a></li>
-			<li><a href="subjectModule">subject module</a></li>
-			<li><a href="assignS2C">Assign Stu to class</a></li>
-			<li><a href="assignTS2C">Assign Sub &amp; Teach</a></li>
+			<li><a href="studentModule" >student module</a></li>
+			<li><a href="classModule" >class module</a></li>
+			<li><a href="teacherModule" >teacher module</a></li>
+			<li><a href="subjectModule" >subject module</a></li>
+			<li><a href="assignS2C" >Assign Stu to class</a></li>
+			<li><a href="assignTS2C" >Assign Sub &amp; Teach</a></li>
 		</ul>
 	</div>
 	${classesDiv}

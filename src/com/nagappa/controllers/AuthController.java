@@ -36,14 +36,26 @@ public class AuthController {
 		return view;
 	}
 
-	@RequestMapping(value="login", method=RequestMethod.POST)
-	public String isValidUser(HttpServletRequest request,@RequestParam("username")String username,@RequestParam("password")String password,ModelMap map) {
+	@RequestMapping(value="login", method= {RequestMethod.POST,RequestMethod.GET})
+	public String isValidUser(HttpServletRequest request
+			,@RequestParam(name="username",value="",required = false)String username
+			,@RequestParam(name="password",value="",required = false)String password
+			,@RequestParam(name="notAnAdmin",value="",required=false)String notAnAdmin
+			,ModelMap map) {
 		String view="login";
 		try {
-			String userCheck = (String)map.getAttribute("username");
-			if(!userCheck.isEmpty() && userCheck!=null) {
-				view = "dashboard";
-				return view;
+			HttpSession session = request.getSession(false);
+			if (session != null) {
+				String userCheck = (String) session.getAttribute("username");
+				//	String userCheck = (String)map.getAttribute("username");
+				if (!userCheck.isEmpty() && userCheck != null) {
+					view = "dashboard";
+					map.addAttribute("notAnAdmin",notAnAdmin);
+					map.addAttribute("classesDiv", getDivString());
+					return view;
+				} 
+			}else {
+				throw new Exception();
 			}
 		} catch (Exception e1) {
 			if(username.isEmpty() || password.isEmpty()) {
@@ -94,7 +106,7 @@ public class AuthController {
 			int id=cls.getId();
 			char sec = cls.getSection();
 			int std = cls.getValue();
-			String link = "<a href='displayClass?id="+id+"'>"+std+"<sup class='supScript'>"+getSuperscript(std)+"</sup>"+" "+sec+"</a>";
+			String link = "<a href='displayClass?id="+id+"' target='_blank'>"+std+"<sup class='supScript'>"+getSuperscript(std)+"</sup>"+" "+sec+"</a>";
 			String endDiv = "</div>";
 			divToAddDashboard += startDiv+link+endDiv;
 		}

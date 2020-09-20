@@ -9,7 +9,7 @@
 <title>Add Student Form</title>
 </head>
 <body>
-	<h2>Hi ${username}</h2>
+	<h2 class='innerModule'>Logged In: ${username}</h2>
 	<a href="logout"><button type="button" name="logout">Logout</button></a>
 	<a href="login"><button type="button" name="home">Home</button></a>
 	<div class="addStudent_form">

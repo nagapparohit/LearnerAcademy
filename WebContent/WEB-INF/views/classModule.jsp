@@ -9,14 +9,15 @@
 <title>Add Class</title>
 </head>
 <body>
-<h2>Hi ${username}</h2>
-	<a href="logout"><button type="button" name="logout">Logout</button></a>
-	<a href="login"><button type="button" name="home">Home</button></a>
+<h2 class="innerModule">Logged In: ${username}</h2>
+
 	<div class="signup_form">
 		<form action="saveClass" method="post">
 			<input type="text" name="section" placeholder="Enter Section"><br><br>
 			<input type="text" name="value" placeholder="Enter Standard"><br><br>
 			<input type="submit" name="Submit"><br><br>
+			<a href="logout"><button type="button" name="logout">Logout</button></a><br><br>
+			<a href="login"><button type="button" name="home">Home</button></a>
 		</form>
 		<span>${invalidCredentials}</span>
 		<span>${error}</span>

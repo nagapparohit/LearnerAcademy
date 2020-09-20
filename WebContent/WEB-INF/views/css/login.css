@@ -137,6 +137,7 @@ body{
 	border-right:none;
 }
 
+
 #dashboard_nav ul li a{
 	text-decoration:none;
 	text-transform:uppercase;
@@ -212,7 +213,7 @@ body{
     width: 500px;
     height: 200px;
     padding-top: 30px;
-    margin-left: 30%;
+    margin-left: 33%;
     margin-top: 100px;
     padding-bottom:40px;
 }
@@ -368,9 +369,38 @@ body{
 }
 
 
+.selectTag{
+  position: relative;
+  font-family: Arial;
+}
 
 
 
+.selectTag select {
+ background:linear-gradient(skyblue,white);
+ margin: 20px;
+ width: 500px;
+ height: 70px;
+ padding-left: 20px;
+ font-weight: bold;
+}
+
+
+.selectTag1{
+  position: relative;
+  font-family: Arial;
+}
+
+
+
+.selectTag1 select {
+ background:linear-gradient(skyblue,white);
+ margin: 20px;
+ width: 400px;
+ height: 70px;
+ padding-left: 20px;
+ font-weight: bold;
+}
 
 
 

@@ -10,7 +10,7 @@
 </head>
 <body>
 <h2 class="innerModule">Logged In: ${username}</h2>
-
+<p class="notAnAdmin">Welcome to Class Module</p>
 	<div class="signup_form">
 		<form action="saveClass" method="post">
 			<input type="text" name="section" placeholder="Enter Section"><br><br>

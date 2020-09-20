@@ -10,7 +10,7 @@
 </head>
 <body>
 <h2 class='innerModule'>Logged In: ${username}</h2>
-
+<p class="notAnAdmin">Welcome to Student Module</p>
 <div id="dashboard_nav">
 		<ul>
 			<li><a href="login">Home</a></li>

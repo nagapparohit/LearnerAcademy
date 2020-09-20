@@ -14,6 +14,7 @@ ${teacherList}
 ${subjectList}
 ${classList}
 <input type="submit" name="addTeacherSubjectToClass" value="Save">
+<a href="login"><button type="button" name="home">Home</button></a>
 ${successSaved}
 </form>
 </body>

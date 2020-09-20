@@ -16,7 +16,8 @@ import com.nagappa.model.StudentEntity;
 public class SaveStudentToClassController {
 
 	@RequestMapping("saveS2C")
-	public String saveS2C(@RequestParam("student")String student,@RequestParam("standard")String standard,ModelMap map) {
+	public String saveS2C(@RequestParam("student")String student,@RequestParam("standard")String standard,ModelMap map
+			,@RequestParam(name="successSaved",value="",required=false)String successSaved) {
 		
 		int admNo = Integer.parseInt(student);
 		String std = standard;

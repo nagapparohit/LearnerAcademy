@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.nagappa.dao.ClassEntityDaoImpl;
 import com.nagappa.dao.SubjectEntityDAOImpl;
@@ -21,7 +22,8 @@ import com.nagappa.model.TeacherEntity;
 public class AssignTeachSubToClass {
 
 	@RequestMapping(value = "assignTS2C")
-	public String assignTS2C(HttpServletRequest request,ModelMap map) {
+	public String assignTS2C(HttpServletRequest request,ModelMap map
+			,@RequestParam(name="successSaved",value="",required=false)String successSaved) {
 		int isAdmin=0;
 		try {
 			HttpSession session = request.getSession(false);
@@ -87,6 +89,7 @@ public class AssignTeachSubToClass {
 			map.addAttribute("teacherList", finalSelectTeacherString);
 			map.addAttribute("subjectList",finalSelectSubString);
 			map.addAttribute("classList", finalSelectClassString);
+			map.addAttribute("successSaved",successSaved);
 
 			return "assignTSC";
 		}

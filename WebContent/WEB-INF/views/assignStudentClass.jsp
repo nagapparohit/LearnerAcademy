@@ -13,6 +13,7 @@
 ${selectStudent}
 ${selectClass}
 <input type="submit" name="addStudentToClass" value="Save">
+<a href="login"><button type="button" name="home">Home</button></a>
 ${successSaved}
 </form>
 </body>

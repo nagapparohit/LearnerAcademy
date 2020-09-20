@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.nagappa.dao.ClassEntityDaoImpl;
 import com.nagappa.dao.StudentEntityDaoImpl;
@@ -18,7 +19,8 @@ import com.nagappa.model.StudentEntity;
 public class AssignStuToClassController {
 
 	@RequestMapping(value = "assignS2C")
-	public String AssingS2CPage(HttpServletRequest request,ModelMap map) {
+	public String AssingS2CPage(HttpServletRequest request,ModelMap map
+			,@RequestParam(name="successSaved",value="",required=false)String successSaved) {
 
 
 		int isAdmin=0;
@@ -66,6 +68,7 @@ public class AssignStuToClassController {
 			String finalSelectClassString = selectClassOpenTag+classOptionTag+selectClassCloseTag;
 			map.addAttribute("selectStudent", finalSelectStudentString);
 			map.addAttribute("selectClass", finalSelectClassString);
+			map.addAttribute("successSaved",successSaved);
 			return "assignStudentClass";
 		}
 	}

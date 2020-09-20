@@ -17,7 +17,8 @@ public class SaveTeachStuClassController {
 	
 	@RequestMapping("saveTS2C")
 	public String saveTS2C(@RequestParam("standard")String std,@RequestParam("subject")String sub,
-						   @RequestParam("teacher")String teacher,ModelMap map) {
+						   @RequestParam("teacher")String teacher,ModelMap map,
+						   @RequestParam(name="successSaved",value="",required=false)String successSaved) {
 		
 		
 		int classId = Integer.parseInt(std);

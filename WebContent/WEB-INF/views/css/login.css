@@ -2,6 +2,50 @@ body{
 	 background:#87e6eb;
 }
 
+
+.welcomeUser{
+	background:linear-gradient(skyblue,white);
+	border-style:groove;
+	border-radius:10px;
+	text-transform:uppercase;
+	width:100px;
+	height:100px;
+	margin-top:10px;
+	margin-bottom:10px;
+	font-size:30px;
+	padding:3px;
+	
+}
+
+.supScript{
+	font-size:10px;
+}
+
+.logoutButton{
+	background:linear-gradient(skyblue,white);
+	float:right;
+	border-style:groove;
+	border-radius:10px;
+	width:100px;
+	margin-bottom:10px;
+	font-size:30px;
+	padding:3px;
+}
+
+.reportHeader{
+	background:linear-gradient(skyblue,white);
+	border-style:groove;
+	border-radius:10px;
+	text-align:center;
+	margin-bottom:10px;
+	font-size:30px;
+	padding:3px;	
+}
+
+.logoutButton a{
+	text-decoration:none;
+}
+
 .classesDiv{
 	background:linear-gradient(skyblue,white);
     border-style:groove;

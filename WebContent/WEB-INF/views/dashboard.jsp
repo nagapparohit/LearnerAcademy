@@ -15,8 +15,9 @@
 	<%-- <h1>This is dashboard you will reach here after login url wiht ${somekey}. Hi ! 
 ${username} , ${password}, ${isAdmin}</h1> --%>
 
-	<a href="logout"><button type="button" name="logout">Logout</button></a>
-
+	<span class="welcomeUser">Welcome ${username}</span>
+	<span class="logoutButton"><a href="logout">Logout</a></span>
+	<p class="notlogin">${notAnAdmin}</p>
 	<div id="dashboard_nav">
 		<ul>
 			<li><a href="studentModule">student module</a></li>

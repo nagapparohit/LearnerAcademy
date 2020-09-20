@@ -10,6 +10,7 @@
 </head>
 <body>
 <%-- ${classInfo} --%>
+<h1 class="reportHeader">Report of Class ${reportHeader}</h1>
 ${studentTable}
 ${subjectTeacherTable}
 </body>

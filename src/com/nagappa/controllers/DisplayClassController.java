@@ -25,14 +25,30 @@ public class DisplayClassController {
 		ClassEntityDaoImpl classDao = new ClassEntityDaoImpl();
 		ClassEntity cls = classDao.getClassbyId(Integer.parseInt(id));
 		classDao.closeClassEntityDaoImplSession();
-	
+		
+		char sec = Character.toUpperCase(cls.getSection());
+		int stdValue = cls.getValue();
+		String sup = getSuperscript(stdValue);
+		map.addAttribute("reportHeader",stdValue+"<sup class='supScript'>"+sup+"<sup>"+" "+sec);
 		//subjectTeacherTable
 		map.addAttribute("subjectTeacherTable", getTeacherTable(cls));
 		map.addAttribute("studentTable", getStudentTable(cls));
 		map.addAttribute("classInfo",cls.toString());
-	
+		
 		//classInfo
 		return "displayClass";
+	}
+	
+	public String getSuperscript(int x) {
+		if(x != 1 && x != 2 && x!= 3) {
+			return "th";
+		}else if(x==1) {
+			return "st";
+		}else if(x==2) {
+			return "nd";
+		}else {
+			return "rd";
+		}
 	}
 	
 	public String getTeacherTable(ClassEntity cls) {

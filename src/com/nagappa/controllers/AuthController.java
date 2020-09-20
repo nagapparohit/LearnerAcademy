@@ -94,7 +94,7 @@ public class AuthController {
 			int id=cls.getId();
 			char sec = cls.getSection();
 			int std = cls.getValue();
-			String link = "<a href='displayClass?id="+id+"'>"+std+"<sup>"+getSuperscript(std)+"</sup>"+" "+sec+"</a>";
+			String link = "<a href='displayClass?id="+id+"'>"+std+"<sup class='supScript'>"+getSuperscript(std)+"</sup>"+" "+sec+"</a>";
 			String endDiv = "</div>";
 			divToAddDashboard += startDiv+link+endDiv;
 		}

@@ -29,7 +29,7 @@ public class DisplayClassController {
 		char sec = Character.toUpperCase(cls.getSection());
 		int stdValue = cls.getValue();
 		String sup = getSuperscript(stdValue);
-		map.addAttribute("reportHeader",stdValue+"<sup class='supScript'>"+sup+"<sup>"+" "+sec);
+		map.addAttribute("reportHeader",stdValue+"<sup class='supScript'>"+sup+"</sup>"+" "+sec);
 		//subjectTeacherTable
 		map.addAttribute("subjectTeacherTable", getTeacherTable(cls));
 		map.addAttribute("studentTable", getStudentTable(cls));

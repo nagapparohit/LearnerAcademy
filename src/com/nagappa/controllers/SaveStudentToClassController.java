@@ -37,6 +37,8 @@ public class SaveStudentToClassController {
 		ClassEntityDaoImpl classDao = new ClassEntityDaoImpl();
 		classDao.addStudentToClass(stus.get(0), classEntity);
 		classDao.closeClassEntityDaoImplSession();
+		
+		map.addAttribute("successSaved","Student successfully assigned to a class");
 		return "redirect:assignS2C";
 	}
 }

@@ -38,7 +38,7 @@ public class SaveTeachStuClassController {
 		classDao.assignSubToTeacherInClass(subject, teach, cls);
 		classDao.closeClassEntityDaoImplSession();
 	
-		
+		map.addAttribute("successSaved","Teacher successfully assigned sub for a class");
 		return "redirect:assignTS2C";
 	}
 	

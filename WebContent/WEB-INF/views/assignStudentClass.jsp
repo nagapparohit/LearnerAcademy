@@ -13,6 +13,7 @@
 ${selectStudent}
 ${selectClass}
 <input type="submit" name="addStudentToClass" value="Save">
+${successSaved}
 </form>
 </body>
 </html>

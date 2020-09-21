@@ -20,7 +20,7 @@ public class TeacherModuleController {
 		try {
 			HttpSession session = request.getSession(false);
 			isAdmin = (int) session.getAttribute("isAdmin");
-		} catch (Exception e) {
+		}catch (Exception e) {
 			e.printStackTrace();
 		}
 		
